@@ -1,0 +1,70 @@
+# ============================================================
+# 日本株投資分析システム - .gitignore
+# ============================================================
+
+# 機密情報・環境変数
+.env
+.env.local
+.env.*.local
+
+# ローカルデータ（大容量・機密）
+data/raw/
+data/processed/
+data/reports/
+*.duckdb
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+MANIFEST
+
+# 仮想環境
+.venv/
+venv/
+env/
+.python-version
+
+# uv
+.uv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# テスト・カバレッジ
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ログ
+*.log
+logs/
+
+# 一時ファイル
+*.tmp
+*.bak
+*.orig
+tmp/
+
+# Streamlit
+.streamlit/secrets.toml
