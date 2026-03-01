@@ -1,0 +1,62 @@
+[project]
+name = "investment-system"
+version = "0.1.0"
+description = "日本株投資分析システム - Japanese Stock Investment Analysis System"
+authors = [
+    { name = "Investment Research Team" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.40.0",
+    "yfinance>=0.2.50",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "streamlit>=1.40.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "requests>=2.32.0",
+    "python-dotenv>=1.0.0",
+    "duckdb>=1.1.0",
+    "schedule>=1.2.0",
+    "plotly>=5.24.0",
+    "httpx>=0.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-mock>=3.14.0",
+    "ruff>=0.8.0",
+    "mypy>=1.13.0",
+]
+
+[project.scripts]
+daily-update = "scripts.daily_update:main"
+earnings-analyze = "scripts.earnings_analyze:main"
+weekly-report = "scripts.weekly_report:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
