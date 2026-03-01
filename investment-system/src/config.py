@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     # API キー
     # ------------------------------------------------------------------
     anthropic_api_key: str = Field(..., description="Anthropic API キー")
-    edinet_api_key: str = Field(..., description="EDINET API キー")
+    edinet_api_key: str = Field(..., description="f12ebf6c16e14d7b864b9df1c801c770")
     slack_webhook_url: str | None = Field(None, description="Slack Webhook URL")
 
     # ------------------------------------------------------------------
