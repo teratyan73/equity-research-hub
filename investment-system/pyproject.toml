@@ -60,3 +60,6 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+markers = [
+    "integration: 実 API を呼び出す統合テスト (RUN_INTEGRATION_TESTS=1 で有効化)",
+]
